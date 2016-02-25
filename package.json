@@ -1,0 +1,20 @@
+{
+  "name": "phonegap-local-build",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  	"start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "phonegap-local-build": "./index.js"
+  },
+  "author": "qkdryer (quentin.dreyer@gmail.com)",
+  "license": "ISC",
+    "dependencies": {
+    "lodash": "^4.5.1",
+    "promise": "^7.1.1",
+    "xml2js": "^0.4.16"
+  }
+}
