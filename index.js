@@ -41,12 +41,12 @@ var parse_xml = function(xml) {
         fs.readFile(xml, function(err, data) {
             (new xml2js.Parser()).parseString(data, function (err, data) {
                 var plugins = _.reduce(data.widget.plugin.concat(_.reduce(data.widget.platform, function(memo, platform, idx) {
-                    if (!platform) return;
+                    if (!platform) return memo;
                     var name = platform.$ && platform.$.name;
                     var current_platform = name === phonegap_platform_mapping[PLATFORM];
                     return current_platform ? memo.concat(platform.plugin) : memo;
                 }, [])), function(memo, plugin, idx) {
-                    if (!plugin) return;
+                    if (!plugin) return memo;
 
                     var name = plugin.$ && plugin.$.name || plugin.$.spec;
                     if (plugin.param) {
